@@ -35,12 +35,14 @@
             alert("El usuario debe tener al menos 5 caracteres")
             return false;
         }
+
         let contrasenaAValidar = document.getElementById("contra").value ;
         let contra2 = document.getElementById("contra2").value;
         if (contrasenaAValidar !=contra2){
             alert("La contraseña debe ser la misma")
             return false;
         }
+
 
         alert("Formulario correcto");
         return true;
