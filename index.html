@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Formulario</h2>
+
+  <form action="procesa.php" onsubmit="return validarFormulario()" method="post">
+
+    <p>
+        <label for="">Usuario:</label>
+        <input type="text" id="usuario" name="usuario">
+    </p>
+
+    <p>
+    <label for="">Contraseña:</label>
+    <input type="password" id="contra" name="contra">
+    </p>
+    <p>
+    <label for="">Repita contraseña:</label>
+    <input type="password" id="contra2" name="contra2">
+    </p>
+
+    <input type="submit" value="Cambiar contraseña">
+  </form>
+
+    <script>
+        function validarFormulario() {
+
+        let usuario = document.getElementById("usuario").value;
+        if (usuario.length < 5){
+            alert("El usuario debe tener al menos 5 caracteres")
+            return false;
+        }
+        let contrasenaAValidar = document.getElementById("contra").value ;
+        let contra2 = document.getElementById("contra2").value;
+        if (contrasenaAValidar !=contra2){
+            alert("La contraseña debe ser la misma")
+            return false;
+        }
+
+        alert("Formulario correcto");
+        return true;
+
+    }
+        
+
+    </script>
+</body>
+</html>
